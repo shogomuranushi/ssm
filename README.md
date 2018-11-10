@@ -27,8 +27,8 @@ usm interactively specifies an EC2 and accesses EC2 via AWS Session Manager.
 - Access from the EC2 to the Internet is permitted
 
 ## Install
-- Set up the local. Install required AWS CLI and Session Manager Plugin and peco.
-- Set up the server. Install required ssm agent and Attach the IAM role of AmazonEC2RoleforSSM
+- Set up the local. Install required [AWS CLI](https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/installing.html) and [Session Manager Plugin for the AWS CLI](https://docs.aws.amazon.com/ja_jp/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html) and [peco](https://github.com/peco/peco).
+- Set up the server. Install required [ssm agent](https://docs.aws.amazon.com/ja_jp/systems-manager/latest/userguide/sysman-manual-agent-install.html) and [Attach the IAM role of `AmazonEC2RoleforSSM` to EC2](https://docs.aws.amazon.com/ja_jp/systems-manager/latest/userguide/systems-manager-access.html)
 
 - Install ssm
 ```
