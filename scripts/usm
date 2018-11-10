@@ -1,0 +1,10 @@
+#!/bin/bash
+
+export InstanceId=$(aws ec2 describe-instances \
+    --query 'Reservations[].Instances[].[(Tags[?Key==`Name`] | [0].Value),InstanceId,InstanceType,State.Name,PublicIpAddress,PrivateIpAddress,InstanceLifecycle,ImageId]' \
+    --output table | peco | awk '{print $4}')
+
+if [ -z "${InstanceId}" ]; then exit; fi
+
+echo "Sesstion Manager Start..."
+aws ssm start-session --target ${InstanceId}
